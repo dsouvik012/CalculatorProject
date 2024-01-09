@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Calculator</title>
+
+    <style>
+        body{
+            background-color: rgb(246, 246, 228);
+        }
+        .box{
+            height: 450px;
+            width: 320px;
+            background-color: rgb(153, 140, 140);
+            border-radius: 20px;
+            margin-left: 450px;
+        }
+        .displaydesign{
+            background-color: blanchedalmond;
+            height: 100px;
+            width: 313px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border: 2px solid;
+            font-size: 27px;
+            font-style: normal;
+            font-weight: 500;
+        }
+        .buttondesign{
+            height: 60px;
+            width: 60px;
+            border-radius: 60px;
+            border: none;
+            background-color: rgb(237, 228, 228);
+            font-size: 25px;
+            color: rgb(54, 49, 49);
+            margin: 20px 5px 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="margin-left: 490px;">Simple Calculator</h1>
+    <div class="box">
+        <input type="text" class="displaydesign" id="finaloutput"><br>
+
+        <button class="buttondesign" onclick="display('7')">7</button>
+        <button class="buttondesign" onclick="display('8')">8</button>
+        <button class="buttondesign" onclick="display('9')">9</button>
+        <button class="buttondesign" onclick="display('+')">+</button><br>
+        <button class="buttondesign" onclick="display('4')">4</button>
+        <button class="buttondesign" onclick="display('5')">5</button>
+        <button class="buttondesign" onclick="display('6')">6</button>
+        <button class="buttondesign" onclick="display('-')">-</button><br>
+        <button class="buttondesign" onclick="display('1')">1</button>
+        <button class="buttondesign" onclick="display('2')">2</button>
+        <button class="buttondesign" onclick="display('3')">3</button>
+        <button class="buttondesign" onclick="display('*')">*</button><br>
+        <button class="buttondesign" onclick="display('0')">0</button>
+        <button class="buttondesign" onclick="display('.')">.</button>
+        <button class="buttondesign" onclick="display('/')">/</button>
+        <button class="buttondesign" onclick="solve()">=</button>
+
+    </div>
+
+
+    <script>
+        function display(val){
+            document.getElementById("finaloutput").value+=val
+        }
+
+        function solve(){
+            var exp = document.getElementById("finaloutput").value
+
+            var soln = eval(exp)
+            document.getElementById("finaloutput").value=soln
+        }
+
+    </script>
+    
+</body>
+</html>
